@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-center mt-5 mb-3">Формирования заявления</h1>
+    <div class="card" style="margin-bottom: 80px; max-width: 800px; margin: auto;">
+        <div class="card-header text-center">Создание заявления</div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Гос.Номер</label>
+                    <input type="text"  name="title" class="form-control" required>
+                </div>
+                <div class="form-floating" style="margin-bottom: 20px;">
+                    <label for="floatingTextarea2">Описание</label>
+                    <textarea class="form-control" placeholder="Опишите нарушение" id="floatingTextarea2" style="height: 100px" name="body" required></textarea>
+                  </div>
+                <button
+                        type="submit"
+                        class="btn btn-primary"
+                        style="width: 100%;"
+                        >
+                    Создать
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
